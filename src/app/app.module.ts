@@ -28,6 +28,20 @@ import { YearsComponent } from './years/years.component';
 import { SemestersComponent } from './semesters/semesters.component';
 import {CdkTreeModule} from '@angular/cdk/tree';
 import {MatIconModule} from '@angular/material/icon';
+import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
+const routes: Routes = [
+  { path: 'Home', component:  HomePageComponent},
+  { path: 'Grades', component:  GradesComponent},
+  { path: 'Courses', component:  AllCoursesComponent},
+  { path: 'Announcements', component: AnnouncementsComponent},
+  { path: 'Login', component:  LoginComponent},
+  { path: 'Register', component:  RegisterComponent},
+  {path:'', redirectTo: '/Home', pathMatch: 'full'}
+]
+
+
 
 @NgModule({
   declarations: [
@@ -62,7 +76,9 @@ import {MatIconModule} from '@angular/material/icon';
     MatTreeModule,
     MatTabsModule,
     CdkTreeModule,
-    MatIconModule
+    MatIconModule,
+    RouterModule.forRoot(routes),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
