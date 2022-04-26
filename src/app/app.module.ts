@@ -21,7 +21,13 @@ import { AnnouncementComponent } from './announcement/announcement.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-
+import {MatTreeModule} from '@angular/material/tree';
+import { AllCoursesComponent } from './all-courses/all-courses.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import { YearsComponent } from './years/years.component';
+import { SemestersComponent } from './semesters/semesters.component';
+import {CdkTreeModule} from '@angular/cdk/tree';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -36,7 +42,10 @@ import { RegisterComponent } from './register/register.component';
     AnnouncementComponent,
     CarouselComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AllCoursesComponent,
+    YearsComponent,
+    SemestersComponent
 
   ],
   imports: [
@@ -49,7 +58,11 @@ import { RegisterComponent } from './register/register.component';
     MatGridListModule,
     MatTableModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTreeModule,
+    MatTabsModule,
+    CdkTreeModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
