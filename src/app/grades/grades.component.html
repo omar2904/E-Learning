@@ -1,0 +1,43 @@
+<div class="bg">
+    <br><br><br><br><br><br>
+    <app-profile></app-profile>
+
+    <mat-grid-list cols="2" rowHeight="6:1">
+        <mat-grid-tile>
+            <h2 style="margin-right: 5%; ">Academic Year:</h2>
+            <mat-select placeholder="Choose a Semester"  style="background-color: white; width: 50%; height: 15%;">
+                <mat-option value="option1">2018/2019</mat-option>
+                <mat-option value="option2">2019/2020</mat-option>
+                <mat-option value="option3">2020/2021</mat-option>
+                <mat-option value="option3">2021/2022</mat-option>
+            </mat-select>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <h2 style="margin-right: 5%; ">Semester:</h2>
+            <mat-select placeholder="Choose a Semester" style="background-color: white; width: 50%; height: 15%;">
+                <mat-option value="option1">Semester 1</mat-option>
+                <mat-option value="option2">Semester 2</mat-option>
+              </mat-select>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-grid-list cols="2" rowHeight="2:1">
+        <mat-grid-tile>
+            <app-grade></app-grade>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <app-grade></app-grade>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <app-grade></app-grade>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <app-grade></app-grade>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <app-grade></app-grade>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
+<app-header></app-header>
+<app-footer></app-footer>

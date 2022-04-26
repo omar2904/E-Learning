@@ -1,0 +1,15 @@
+<mat-toolbar color="primary" style="position: fixed; top: 0;">
+    <span style="padding: 1%;">E-Learning System</span>
+    <div style="padding-left: 60%;"></div>
+    <button mat-button>Home</button>
+    <button mat-button>Grades</button>
+    <button mat-button [matMenuTriggerFor]="menu">Courses</button>
+    <button mat-button>Announcements</button>
+    <button mat-button>Logout</button>
+</mat-toolbar>
+<mat-menu #menu="matMenu">
+    <button mat-menu-item>UI Design</button>
+    <button mat-menu-item>Software Maintenance</button>
+    <button mat-menu-item>Safety Critical Systems</button>
+    <button mat-menu-item>Cloud Computing</button>
+</mat-menu>

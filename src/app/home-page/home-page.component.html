@@ -1,0 +1,53 @@
+<div class="bg">
+    <br><br><br><br><br><br>
+
+    <mat-grid-list cols="3" rowHeight="6:1">
+        <mat-grid-tile colspan="3">
+            <p style="font-size: 50px; font-weight: bold;">Faculty of Computer and Information Science</p>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="3">
+            <p style="font-weight: bolder; font-size: 30px;">Ain Shams University, Cairo, Egypt.</p>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+    <hr style="width: 50%;"><br><br><br>
+
+    <app-profile></app-profile>
+
+    <mat-grid-list cols="3" rowHeight="3:1">
+        <mat-grid-tile>
+            <button mat-flat-button class="button">All Courses</button>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <button mat-flat-button class="button">Grades</button>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <button mat-flat-button class="button">Announcements</button>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+    <hr style="width: 50%;"><br><br><br>
+
+    <mat-grid-list cols="4" rowHeight="1:1">
+        <mat-grid-tile colspan="4">
+            <app-carousel></app-carousel> 
+        </mat-grid-tile>
+    </mat-grid-list>
+    <br><br><br>
+
+    <mat-grid-list cols="4" rowHeight="2:1">
+        <mat-grid-tile colspan="4">
+            <mat-card style="background-color: grey; width: 40%;">
+                <h1 style="padding: 2%">How can we Improve?</h1>
+                <mat-form-field style="width: 80%; padding: 2%">
+                    <input matInput placeholder="Comment" >
+                </mat-form-field>
+                <button mat-raised-button style="margin: 2%">Submit</button>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+    <br><br><br>
+
+</div>
+<app-header></app-header>
+<app-footer></app-footer>

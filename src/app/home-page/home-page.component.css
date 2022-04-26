@@ -1,0 +1,15 @@
+.button {
+    height: 60px;
+    width: 350px;
+    font-size: 40px;
+    background-color: black;
+    color: white;
+}
+
+.bg {
+    background-image: url(../../assets/homePage.png);
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

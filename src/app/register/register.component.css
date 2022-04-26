@@ -1,0 +1,15 @@
+.vl {
+    border-left: 2px solid #448aff;
+    height: 400px;
+    display: inline-block;
+    margin-left: 10%;
+    margin-top: 5%;
+    float: left;
+  } 
+
+  .signUp {
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 40%;
+    margin-bottom: 5%
+  }
