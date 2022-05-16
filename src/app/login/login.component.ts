@@ -28,7 +28,8 @@ export class LoginComponent implements OnInit {
     const studentsObservable = this.studentService.getStudents();
     studentsObservable.subscribe((data:any)=>{
     if (data) {
-     console.log(Object.keys(data))
+      const t = data
+     console.log(Object.keys(t))
       this.router.navigate(['Home'])
           alert("Successfully Logged In !")
     }
