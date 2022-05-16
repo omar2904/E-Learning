@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
 import { ValidateUserService } from '../validate-user/validate-user.service';
+
 
 @Component({
   selector: 'app-login',
@@ -26,6 +28,7 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['Home'])
       alert("Successfully Logged In !")
     }
+
     else if(this.email == 'admin' && this.password == 'admin')
     {
       this.router.navigate(['Admin'])
@@ -36,6 +39,7 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['Users'])
       alert("Successfully Logged In !")
     }
+
     else {
       alert("Wrong email or password!")
     }

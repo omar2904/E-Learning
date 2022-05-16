@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
 import { ValidateUserService } from '../validate-user/validate-user.service';
+
 
 @Component({
   selector: 'app-register',
