@@ -1,4 +1,4 @@
-<div class="bg">
+<div style="background-color: rgba(238, 238, 238, 1);">
     <br><br><br><br><br><br>
 
     <mat-grid-list cols="3" rowHeight="6:1">
@@ -16,22 +16,33 @@
 
     <mat-grid-list cols="3" rowHeight="3:1">
         <mat-grid-tile>
-            <button mat-flat-button class="button">All Courses</button>
+            <button mat-flat-button class="button" color="primary" routerLink="/Courses" routerLinkActive="active">All Courses</button>
         </mat-grid-tile>
         <mat-grid-tile>
-            <button mat-flat-button class="button">Grades</button>
+            <button mat-flat-button color="primary" class="button" routerLink="/Grades" routerLinkActive="active">Grades</button>
         </mat-grid-tile>
         <mat-grid-tile>
-            <button mat-flat-button class="button">Announcements</button>
+            <button mat-flat-button color="primary" class="button" routerLink="/Announcements"
+                routerLinkActive="active">Announcements</button>
         </mat-grid-tile>
     </mat-grid-list>
 
     <hr style="width: 50%;"><br><br><br>
 
-    <mat-grid-list cols="4" rowHeight="1:1">
-        <mat-grid-tile colspan="4">
-            <app-carousel></app-carousel> 
+    <mat-grid-list cols="4" rowHeight="2:1">
+
+        <mat-grid-tile>
+            <img src="assets/right-arrow (1).png" />
         </mat-grid-tile>
+        <mat-grid-tile colspan="2">
+            <img src="assets/a.png" />
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <img src="assets/right-arrow (2).png" />
+        </mat-grid-tile>
+
+
+
     </mat-grid-list>
     <br><br><br>
 
@@ -40,9 +51,9 @@
             <mat-card style="background-color: grey; width: 40%;">
                 <h1 style="padding: 2%">How can we Improve?</h1>
                 <mat-form-field style="width: 80%; padding: 2%">
-                    <input matInput placeholder="Comment" >
+                    <input matInput placeholder="Comment">
                 </mat-form-field>
-                <button mat-raised-button style="margin: 2%">Submit</button>
+                <button mat-raised-button color="primary" style="margin: 2%">Submit</button>
             </mat-card>
         </mat-grid-tile>
     </mat-grid-list>

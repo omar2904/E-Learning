@@ -15,37 +15,41 @@
 </div>
 
 <div style="float: left; width: 30%; height: 40%; margin-left: 10%;margin-top: 4%;">
+    <p class="signUp">Register</p>
     <mat-card
         style="background-color: #ffffff;width: 100%; height: fit-content; text-align: center; font-weight: bold; border-radius: 25px;">
         <mat-card-content>
             <mat-form-field style="text-align: left; width: 80%; padding-top: 10%;">
                 <mat-label>Email</mat-label>
-                <input type="email" matInput placeholder="Enter Email">
-              </mat-form-field>
+                <input type="email" matInput placeholder="Enter Email" [(ngModel)]="email">
+            </mat-form-field>
 
-              <mat-form-field style="text-align: left; width: 80%; padding-top: 5%; margin-bottom: 5%;">
+            <mat-form-field style="text-align: left; width: 80%; padding-top: 5%; margin-bottom: 5%;">
                 <mat-label>Password</mat-label>
-                <input type="password" matInput placeholder="Enter Password">
-              </mat-form-field>
+                <input type="password" matInput placeholder="Enter Password" [(ngModel)]="password">
+            </mat-form-field>
 
-               <mat-form-field style="text-align: left; width: 80%;">
+            <mat-form-field style="text-align: left; width: 80%;">
                 <mat-label>First Name</mat-label>
                 <input type="text" matInput placeholder="Enter First Name">
-              </mat-form-field>
+            </mat-form-field>
 
-              <mat-form-field style="text-align: left; width: 80%; padding-top: 5%; margin-bottom: 5%;">
+            <mat-form-field style="text-align: left; width: 80%; padding-top: 5%; ">
                 <mat-label>Last Name</mat-label>
                 <input type="text" matInput placeholder="Enter Last Name">
-              </mat-form-field>
-              <br>
+            </mat-form-field>
+
+            <mat-form-field style="text-align: left; width: 80%; padding-top: 5%; margin-bottom: 5%;">
+                <mat-label>Academic Year</mat-label>
+                <input type="text" matInput placeholder="Enter Academic Year (1 .. 4)">
+            </mat-form-field>
+            <br>
 
 
-              <button mat-flat-button color="primary" style="margin-left: 10%;">Register</button>
-              <button mat-flat-button color="primary" style="margin-left: 10%;">Login</button>
+            <button mat-flat-button color="primary" style="margin-left: 10%;" (click)="addUser()">Register</button>
+            <button mat-flat-button color="primary" style="margin-left: 10%;" routerLink="/Login"
+                routerLinkActive="active">Login</button>
         </mat-card-content>
     </mat-card>
 
 </div>
-
-
-<app-header></app-header>

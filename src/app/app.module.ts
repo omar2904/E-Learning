@@ -24,10 +24,32 @@ import { RegisterComponent } from './register/register.component';
 import {MatTreeModule} from '@angular/material/tree';
 import { AllCoursesComponent } from './all-courses/all-courses.component';
 import {MatTabsModule} from '@angular/material/tabs';
-import { YearsComponent } from './years/years.component';
-import { SemestersComponent } from './semesters/semesters.component';
 import {CdkTreeModule} from '@angular/cdk/tree';
 import {MatIconModule} from '@angular/material/icon';
+import { CourseComponent } from './course/course.component';
+import { LecturesComponent } from './lectures/lectures.component';
+import { LabsComponent } from './labs/labs.component';
+import { HeaderAdminComponent } from './header-admin/header-admin.component';
+import { AdminComponent } from './admin/admin.component';
+import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { UsersComponent } from './users/users.component';
+import { HeaderFacultyComponent } from './header-faculty/header-faculty.component';
+import { NewCourseComponent } from './new-course/new-course.component';
+
+const routes: Routes = [
+  { path: 'Home', component:  HomePageComponent},
+  { path: 'Grades', component:  GradesComponent},
+  { path: 'Courses', component:  AllCoursesComponent},
+  { path: 'Announcements', component: AnnouncementsComponent},
+  { path: 'Login', component:  LoginComponent},
+  { path: 'Register', component:  RegisterComponent},
+  { path: 'Course', component: CourseComponent },
+  { path: 'Admin', component: AdminComponent },
+  { path: 'Users', component: UsersComponent },
+  { path: 'NewCourse', component: NewCourseComponent },
+  {path:'', redirectTo: '/Login', pathMatch: 'full'}
+]
 
 @NgModule({
   declarations: [
@@ -44,8 +66,14 @@ import {MatIconModule} from '@angular/material/icon';
     LoginComponent,
     RegisterComponent,
     AllCoursesComponent,
-    YearsComponent,
-    SemestersComponent
+    CourseComponent,
+    LecturesComponent,
+    LabsComponent,
+    HeaderAdminComponent,
+    AdminComponent,
+    UsersComponent,
+    HeaderFacultyComponent,
+    NewCourseComponent
 
   ],
   imports: [
@@ -62,7 +90,9 @@ import {MatIconModule} from '@angular/material/icon';
     MatTreeModule,
     MatTabsModule,
     CdkTreeModule,
-    MatIconModule
+    MatIconModule,
+    RouterModule.forRoot(routes),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,72 @@
+<div style="background-color: rgba(238, 238, 238, 1);">
+    <br><br><br>
+    <div style="vertical-align:middle; display: inline-block ; width: 50%; margin-left: 6%;">
+        <p style="font-size: 50px; margin: 8%; margin-bottom: 5%;">User Interface Design</p>
+        <p style="font-size: 20px; margin-left: 9%;">Dr. Nivin Atef</p>
+        <p style="font-size: 20px; margin-left: 9%;">TA. Lamis</p>
+    </div>
+    <div style="vertical-align:middle; display: inline-block;">
+        <br><br><br><br><br><br>
+        <img src="../../assets/sp.png">
+    </div>
+    <br><br><br><br><br><br>
+    <hr style="width: 80%;">
+    <br><br><br>
+    <div style="margin-left:25%; width: 50%; ">
+        <app-lectures style="display: flex;"></app-lectures>
+        <br><br>
+        <button mat-flat-button (click)="AddLec()" color="primary" style="margin-left: 35%; width: 30%;">Add Lectures</button>
+    </div>
+    <div *ngIf="lec" style="text-align: left;">
+        <mat-form-field style="width: 40%; padding-top: 3%;margin-left: 25%;">
+            <mat-label>Lecture Title</mat-label>
+            <input type="text" matInput>
+        </mat-form-field>
+        <mat-form-field style="width: 40%; padding-top: 3%; margin-bottom: 3%; margin-left: 25%;">
+            <mat-label>Lecture Path</mat-label>
+            <input type="text" matInput>
+        </mat-form-field>
+        <button mat-flat-button color="primary" style="margin-left: 25%; width: 20%;">Upload</button>
+    </div>
+    <br><br><br><br><br><br>
+    <hr style="width: 80%;">
+    <br><br><br>
+    <div style="margin-left:25%; width: 50%; ">
+        <app-labs style="display: flex;"></app-labs>
+        <br><br>
+        <button mat-flat-button (click)="AddLab()" color="primary" style="margin-left: 35%; width: 30%;">Add Labs</button>
+    </div>
+    <div *ngIf="lab" style="text-align: left;">
+        <mat-form-field style="width: 40%; padding-top: 3%;margin-left: 25%;">
+            <mat-label>Lab Title</mat-label>
+            <input type="text" matInput>
+        </mat-form-field>
+        <mat-form-field style="width: 40%; padding-top: 3%; margin-bottom: 3%; margin-left: 25%;">
+            <mat-label>Lab Path</mat-label>
+            <input type="text" matInput>
+        </mat-form-field>
+        <button mat-flat-button color="primary" style="margin-left: 25%; width: 20%;">Upload</button>
+    </div>
+    <div>
+        <br><br>
+        <hr style="width: 80%;">
+        <br><br><br>
+        <p style="text-align: center; font-size: 50px;">Grades</p>
+        <br><br>
+        <button mat-flat-button color="primary" style="margin-left: 35%; width: 30%;">Upload</button>
+    </div>
+    <div>
+        <br><br>
+        <hr style="width: 80%;">
+        <br><br><br>
+        <p style="text-align: center; font-size: 50px;">Announcements</p>
+        <mat-form-field style="width: 40%; padding-top: 3%; margin-bottom: 5%; margin-left: 25%;">
+            <mat-label>Announcement</mat-label>
+            <input type="text" matInput>
+        </mat-form-field>
+        <button mat-flat-button color="primary" style="margin-left: 2%; width: 8%;">Add</button>
+    </div>
+</div>
+
+<app-header-admin></app-header-admin>
+<app-footer></app-footer>
