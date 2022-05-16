@@ -2,13 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { ValidateUserService } from '../validate-user/validate-user.service';
-
+import { StudentService } from '../Services/student/student.service';
+import { Student } from '../Models/Student';
+//import { getDatabase } from "firebase/database";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
 
   email: string = ""
@@ -16,17 +19,18 @@ export class LoginComponent implements OnInit {
   result : boolean = false;
 
 
-  constructor(private validateUserService:ValidateUserService, public router: Router) { }
+  constructor(private validateUserService:ValidateUserService, private studentService: StudentService, public router: Router) { }
 
   ngOnInit(): void {
   }
 
   validateData() : void {
-    this.result = this.validateUserService.ValidateUser(this.email,this.password)
-
-    if (this.result) {
+    const studentsObservable = this.studentService.getStudents();
+    studentsObservable.subscribe((data:any)=>{
+    if (data) {
+     console.log(Object.keys(data))
       this.router.navigate(['Home'])
-      alert("Successfully Logged In !")
+          alert("Successfully Logged In !")
     }
 
     else if(this.email == 'admin' && this.password == 'admin')
@@ -43,5 +47,6 @@ export class LoginComponent implements OnInit {
     else {
       alert("Wrong email or password!")
     }
+  })
   }
 }

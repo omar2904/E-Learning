@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { ValidateUserService } from '../validate-user/validate-user.service';
-
+import { StudentService } from '../Services/student/student.service';
+import { Student } from '../Models/Student';
 
 @Component({
   selector: 'app-register',
@@ -13,16 +14,24 @@ export class RegisterComponent implements OnInit {
 
   email: string = ""
   password: string = ""
+  fname: string = ""
+  lname: string = ""
+  year: string = ""
 
-  constructor(private validateUserService:ValidateUserService, public router: Router) { }
+  constructor(private validateUserService:ValidateUserService, private studentService: StudentService, public router: Router) { }
 
   ngOnInit(): void {
+    
   }
 
   addUser(): void {
-    this.validateUserService.users.push({email:this.email, password:this.password});
-    this.router.navigate(['Login'])
+    let s = new Student(this.email, this.password, this.fname, this.lname, this.year);
+    const studentsObservable = this.studentService.addStudent(s);
+    studentsObservable.subscribe(()=>{
+      this.router.navigate(['Login'])
       alert("Successfully Registered !")
+    })
+   
   }
 
 }

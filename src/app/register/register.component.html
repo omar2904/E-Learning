@@ -34,29 +34,23 @@
 
             <mat-form-field style="text-align: left; width: 80%;">
                 <mat-label>First Name</mat-label>
-                <input type="text" matInput placeholder="Enter First Name">
+                <input type="text" matInput placeholder="Enter First Name" [(ngModel)]="fname">
             </mat-form-field>
 
             <mat-form-field style="text-align: left; width: 80%; padding-top: 5%; ">
                 <mat-label>Last Name</mat-label>
-                <input type="text" matInput placeholder="Enter Last Name">
+                <input type="text" matInput placeholder="Enter Last Name" [(ngModel)]="lname">
             </mat-form-field>
 
             <mat-form-field style="text-align: left; width: 80%; padding-top: 5%; margin-bottom: 5%;">
                 <mat-label>Academic Year</mat-label>
-                <input type="text" matInput placeholder="Enter Academic Year (1 .. 4)">
+                <input type="text" matInput placeholder="Enter Academic Year (1 .. 4)" [(ngModel)]="year">
             </mat-form-field>
             <br>
 
-
-<<<<<<< HEAD
             <button mat-flat-button color="primary" style="margin-left: 10%;" (click)="addUser()">Register</button>
             <button mat-flat-button color="primary" style="margin-left: 10%;" routerLink="/Login"
                 routerLinkActive="active">Login</button>
-=======
-              <button mat-flat-button color="primary" style="margin-left: 10%;" (click)="addUser()">Register</button>
-              <button mat-flat-button color="primary" style="margin-left: 10%;" routerLink="/Login" routerLinkActive="active">Login</button>
->>>>>>> cb6b59a39b6e50b1bb76cf0b73472fe3b9cb6e1f
         </mat-card-content>
     </mat-card>
 
