@@ -36,6 +36,10 @@ import { FormsModule } from '@angular/forms';
 import { UsersComponent } from './users/users.component';
 import { HeaderFacultyComponent } from './header-faculty/header-faculty.component';
 import { NewCourseComponent } from './new-course/new-course.component';
+import { HttpClient,HttpHandler,HttpRequest,HttpEvent,HttpEventType } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 const routes: Routes = [
   { path: 'Home', component:  HomePageComponent},
@@ -91,9 +95,10 @@ const routes: Routes = [
     CdkTreeModule,
     MatIconModule,
     RouterModule.forRoot(routes),
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
