@@ -2,6 +2,7 @@ export class Student{
 
     private static idGenerator: number = 12545151
     
+    key: String = ''
     email: String = "";
     password: String = "";
     name: String = "";

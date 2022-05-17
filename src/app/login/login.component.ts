@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { ValidateUserService } from '../validate-user/validate-user.service';
-import { StudentService } from '../Services/student/student.service';
+
 import { Student } from '../Models/Student';
 import { GlobalVariable } from '../Models/GlobalVariable';
-//import { getDatabase } from "firebase/database";
+import { StudentService } from '../Services/student/student.service';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   arr = []
 
 
-  constructor(private validateUserService: ValidateUserService, private studentService: StudentService, public router: Router) { }
+  constructor(private studentService: StudentService, public router: Router) { }
 
   ngOnInit(): void {
   }
@@ -30,8 +30,9 @@ export class LoginComponent implements OnInit {
     const studentsObservable = this.studentService.getStudents();
     studentsObservable.subscribe((data: any) => {
       const t = data
-      this.arr = Object.values(t)
-      GlobalVariable.students = this.arr
+      GlobalVariable.students = Object.values(t)
+      GlobalVariable.students.key = Object.keys(t)
+      console.log(GlobalVariable.students[0])
       for (let i = 0; i < this.arr.length; i++) {
         if (this.arr[i]['email'] == this.email && this.arr[i]['password'] == this.password) {
           if(this.arr[i]['pending'])
