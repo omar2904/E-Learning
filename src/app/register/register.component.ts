@@ -31,7 +31,6 @@ export class RegisterComponent implements OnInit {
       this.router.navigate(['Login'])
       alert("Successfully Registered !")
     })
-   
   }
 
 }

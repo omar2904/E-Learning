@@ -14,15 +14,17 @@
 <div *ngIf="check">
     <p style="font-size: 20px; margin-left: 25%;">Pending Users</p><br>
     <mat-card style="width: 45%; margin-left: 25%;">
-        <div *ngFor="let student of students">
-            <p style="margin-left: 5%; display: inline; vertical-align: middle;">{{student.name}}</p>
-            <button mat-flat-button color="primary" style="display: inline; margin-left: 35%; ">
-                Accept</button>
-            <button mat-flat-button color="primary" style=" display: inline; margin-left: 5%;">
-                Decline</button>
-            <br>
-            <hr width="90%">
-            <br>
+        <div *ngFor="let student of students; let i = index" [attr.data-index]="i">
+            <div *ngIf="student.pending">
+                <p style="margin-left: 5%; display: inline; vertical-align: middle;">{{student.name}}</p>
+                <button (click)="AcceptPending(i)" mat-flat-button color="primary" style="display: inline; margin-left: 35%; ">
+                    Accept</button>
+                <button mat-flat-button (click)="DeleteStudent(i)" color="primary" style=" display: inline; margin-left: 5%;">
+                    Decline</button>
+                <br>
+                <hr width="90%">
+                <br>
+            </div>
         </div>
     </mat-card>
 </div>
@@ -31,24 +33,16 @@
 <div *ngIf="check == false">
     <p style="font-size: 20px; margin-left: 25%;">All Users</p><br>
     <mat-card style="width: 45%; margin-left: 25%;">
-        <p style="margin-left: 5%; display: inline; vertical-align: middle;">Omar Khaled</p>
-        <button mat-flat-button color="primary" style="display: inline; margin-left: 70%; ">
-            Delete</button>
-        <br>
-        <hr width="90%">
-        <br>
-        <p style="margin-left: 5%; display: inline; vertical-align: middle;">Omar Khaled</p>
-        <button mat-flat-button color="primary" style="display: inline; margin-left: 70%; ">
-            Delete</button>
-        <br>
-        <hr width="90%">
-        <br>
-        <p style="margin-left: 5%; display: inline; vertical-align: middle;">Omar Khaled</p>
-        <button mat-flat-button color="primary" style="display: inline; margin-left: 70%; ">
-            Delete</button>
-        <br>
-        <hr width="90%">
-        <br>
+        <div *ngFor="let student of students; let i = index" [attr.data-index]="i">
+            <div *ngIf="student.pending == false">
+                <p style="margin-left: 5%; display: inline; vertical-align: middle;">{{student.name}}</p>
+                <button mat-flat-button (click)="DeleteStudent(i)" color="primary" style="display: inline; margin-left: 70%; ">
+                    Delete</button>
+                <br>
+                <hr width="90%">
+                <br>
+            </div>
+        </div>
     </mat-card>
 </div>
 

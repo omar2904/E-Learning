@@ -23,9 +23,13 @@ export class StudentService {
     return this.http.get<Student>(this.baseURL+'/students.json?print=pretty', this.httpOptions);
   };
 
-  getStudent(id: any):Observable<Student>{
-    return this.http.get<Student>(this.baseURL+'/students.json/'+ id, this.httpOptions);
+  getStudent(id: String):Observable<Student>{
+    return this.http.get<Student>(this.baseURL+'/students/'+ id + '.json', this.httpOptions);
   };
+
+  updateStudent(id: any, student: any):Observable<Student> {
+    return this.http.put<Student>(this.baseURL + '/students/' + id + '.json', JSON.stringify(student), this.httpOptions);
+  }
 
   addStudent(student: any):Observable<Student>{
     console.log("add student")
@@ -34,6 +38,6 @@ export class StudentService {
   };
 
   deleteStudent(id:any){
-    return this.http.delete<Student>(this.baseURL + '/students.json/'+id,this.httpOptions)
+    return this.http.delete<Student>(this.baseURL + '/students/' + id + '.json',this.httpOptions)
   };
 }
