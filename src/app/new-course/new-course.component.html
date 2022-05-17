@@ -24,6 +24,12 @@
         <mat-label>Course Year</mat-label>
         <input type="text" matInput placeholder="Enter Year" [(ngModel)] = "year">
     </mat-form-field>
+    <mat-form-field style="text-align: left; width: 80%; padding-top: 5%;">
+        <mat-label>Students</mat-label>
+            <mat-select multiple [(value)]="selected">
+                <mat-option *ngFor="let student of students" [value]="student">{{student.name}}</mat-option>
+            </mat-select>
+    </mat-form-field>
     <br><br><br>
     <button mat-flat-button color="primary" style=" width: 50%;">Enroll Students</button>
 

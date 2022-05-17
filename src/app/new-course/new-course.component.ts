@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Course } from '../Models/Course';
+import { GlobalVariable } from '../Models/GlobalVariable';
+import { Student } from '../Models/Student';
 import { CourseService } from '../Services/Course/course.service';
+import { StudentService } from '../Services/student/student.service';
 
 @Component({
   selector: 'app-new-course',
@@ -9,7 +12,9 @@ import { CourseService } from '../Services/Course/course.service';
 })
 export class NewCourseComponent implements OnInit {
 
-
+  students: any;
+  selected = [];
+  courseId: any;
   title = ""
   Doctor = ""
   TA = ""
@@ -17,15 +22,40 @@ export class NewCourseComponent implements OnInit {
   lec = ["Lec 1"]
   labs = ["Lab 1"]
 
-  constructor(private CourseService: CourseService) { }
+  constructor(private CourseService: CourseService, private studentService:StudentService) { }
 
   ngOnInit(): void {
+    const studentsObservable = this.studentService.getStudents();
+    studentsObservable.subscribe((data: any) => {
+      const t = data
+      GlobalVariable.students = Object.values(t)
+      GlobalVariable.students.key = Object.keys(t)
+      this.students = GlobalVariable.students
+      console.log(this.students)
+    });
   }
 
   addCourse(): void {
+    console.log(this.selected)
     let s = new Course(this.title, this.Doctor, this.TA, this.year, this.lec, this.labs);
     const courseObservable = this.CourseService.addCourse(s);
-    courseObservable.subscribe(()=>{
+
+    courseObservable.subscribe((data)=>{
+      this.courseId = Object.values(data)[0]
+      for (let i = 0, j = 0; i < this.students.length; i++) {
+        if(this.students[i].id==this.selected[j]['id']){
+          let s = new Student(this.students[i]['email'], this.students[i]['password'], this.students[i]['name'],
+          this.students[i]['department'], this.students[i]['year'],this.students[i]['pending']);
+          s.addCourse(this.courseId)
+          const studentsObservable = this.studentService.updateStudent(GlobalVariable.students.key[i], s)
+          studentsObservable.subscribe(()=>{
+        });
+          j++
+        }
+        
+      }
+      
+      
       this.title = ""
       this.Doctor = ""
       this.TA = ""

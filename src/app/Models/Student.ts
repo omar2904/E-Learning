@@ -10,17 +10,21 @@ export class Student{
     pending: boolean = true;
     department: String = "";
     id: String = "";
-    courses = [{
-        id:  "",
-        grades: {},
-    }]
-    constructor(email: String, password: String,name: String,department: String,year: String){
+    courses =[{}]
+    constructor(email: String, password: String,name: String,department: String,year: String, pending = true){
         this.email = email
         this.password = password
         this.name = name
         this.department = department
         this.year = year
         this.id = Student.idGenerator.toString()
+        this.pending = pending
         Student.idGenerator++
+    }
+
+    addCourse(courseid: any){
+        let newCourses = [{...this.courses}]
+        newCourses.push(courseid)
+        this.courses = {...newCourses};
     }
 }

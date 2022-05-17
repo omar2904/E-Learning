@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalVariable } from '../Models/GlobalVariable';
+import { StudentService } from '../Services/student/student.service';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+  courses =  GlobalVariable.student.courses;
+  constructor(private studentService:StudentService) { }
 
   ngOnInit(): void {
+
   }
 
 }

@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit {
           }
           GlobalVariable.email = this.email
           GlobalVariable.student = this.arr[i]
+          GlobalVariable.student.key = GlobalVariable.students.key[i]
           this.router.navigate(['Home'])
           alert("Successfully Logged In !")
           return
