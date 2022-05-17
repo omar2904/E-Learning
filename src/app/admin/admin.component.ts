@@ -23,5 +23,8 @@ export class AdminComponent implements OnInit {
   AddLab(){
     this.lab = !this.lab
   }
+  UpdateCourses(){
+    
+  }
 }
 

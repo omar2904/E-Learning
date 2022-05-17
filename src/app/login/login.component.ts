@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit {
             alert("Account is not approved yet!")
             return
           }
+          GlobalVariable.email = this.email
           GlobalVariable.student = this.arr[i]
           this.router.navigate(['Home'])
           alert("Successfully Logged In !")
@@ -47,7 +48,8 @@ export class LoginComponent implements OnInit {
 
       }
       if (this.email == 'faculty' && this.password == 'faculty') {
-        this.router.navigate(['Admin'])
+        GlobalVariable.email = this.email
+        this.router.navigate(['Courses'])
         alert("Successfully Logged In !")
       }
       else if (this.email == 'admin' && this.password == 'admin') {

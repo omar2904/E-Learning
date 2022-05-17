@@ -3,9 +3,16 @@
     <p style="font-weight: bold; font-size: 40px; text-align: center;">All Courses</p>
     <br><br><br><br>
 <div *ngFor="let course of courses; let i = index" [attr.data-index]="i">
-  <button mat-button routerLinkActive="active" onclick="SelectButton(i)"> {{course.name}} </button>  
+  <button mat-button routerLinkActive="active" (click)="SelectButton(i)"> {{course['name']}} </button>  
 </div>
 <br><br><br><br><br><br><br>
 </div>
-<app-header></app-header>
+<div *ngIf="email === 'faculty'"> 
+  <app-header-admin></app-header-admin>
+</div>
+<div *ngIf="email !== 'faculty'"> 
+  <app-header></app-header>
+</div>
+
+
 <app-footer></app-footer>

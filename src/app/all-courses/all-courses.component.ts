@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GlobalVariable } from '../Models/GlobalVariable';
+import { CourseService } from '../Services/Course/course.service';
 
 
 @Component({
@@ -11,16 +12,32 @@ import { GlobalVariable } from '../Models/GlobalVariable';
 
 export class AllCoursesComponent implements OnInit {
   courses = GlobalVariable.courses
-  course = GlobalVariable.course
-  
-  constructor(public router: Router) {
+  email = GlobalVariable.email
+
+  constructor(private courseService: CourseService, public router: Router) {
+    if (!this.courses)
+      this.RetieveAllCourses()
+    console.log(this.email)
   }
+
+
 
   ngOnInit(): void {
   }
 
+  RetieveAllCourses() {
+    const coursesObservable = this.courseService.getCourses();
+    coursesObservable.subscribe((data: any) => {
+      const t = data
+      this.courses = Object.values(t)
+      GlobalVariable.courses = this.courses
+    })
+  }
   SelectButton(i: number) {
-    this.course = this.courses[i]
-    this.router.navigate(['course'])
+    GlobalVariable.course = this.courses[i]
+    if (GlobalVariable.email == 'faculty')
+      this.router.navigate(['Admin'])
+    else
+      this.router.navigate(['Course'])
   }
 }

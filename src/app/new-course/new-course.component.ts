@@ -14,6 +14,8 @@ export class NewCourseComponent implements OnInit {
   Doctor = ""
   TA = ""
   year= ""
+  lec = ["Lec 1"]
+  labs = ["Lab 1"]
 
   constructor(private CourseService: CourseService) { }
 
@@ -21,7 +23,7 @@ export class NewCourseComponent implements OnInit {
   }
 
   addCourse(): void {
-    let s = new Course(this.title, this.Doctor, this.TA, this.year);
+    let s = new Course(this.title, this.Doctor, this.TA, this.year, this.lec, this.labs);
     const courseObservable = this.CourseService.addCourse(s);
     courseObservable.subscribe(()=>{
       this.title = ""

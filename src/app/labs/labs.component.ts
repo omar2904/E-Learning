@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalVariable } from '../Models/GlobalVariable';
 
 @Component({
   selector: 'app-labs',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./labs.component.css']
 })
 export class LabsComponent implements OnInit {
+  labs = GlobalVariable.course.labs
 
   constructor() { }
 
