@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   arr = []
 
 
-  constructor(private validateUserService: ValidateUserService, private studentService: StudentService, public router: Router) { }
+  constructor(private studentService: StudentService, public router: Router) { }
 
   ngOnInit(): void {
   }
