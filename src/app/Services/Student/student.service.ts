@@ -9,7 +9,7 @@ import { Student } from 'src/app/Models/Student';
 export class StudentService {
 
   baseURL   = "https://e-learning-system-7f89d-default-rtdb.firebaseio.com";
-  s = []
+
   constructor(private http: HttpClient) { }
 
   httpOptions = {

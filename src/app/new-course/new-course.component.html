@@ -7,24 +7,30 @@
 <div style="width: 80%; text-align: center; margin-left: 10%;">
     <mat-form-field style="text-align: left; width: 80%; padding-top: 5%;">
         <mat-label>Course Title</mat-label>
-        <input type="text" matInput placeholder="Enter Course Title">
+        <input type="text" matInput placeholder="Enter Course Title" [(ngModel)] = "title">
     </mat-form-field>
 
     <mat-form-field style="text-align: left; width: 80%; padding-top: 5%;">
         <mat-label>Course Doctor</mat-label>
-        <input type="text" matInput placeholder="Enter Course Doctor">
+        <input type="text" matInput placeholder="Enter Course Doctor" [(ngModel)] = "Doctor">
     </mat-form-field>
 
     <mat-form-field style="text-align: left; width: 80%; padding-top: 5%;">
         <mat-label>Course TA</mat-label>
-        <input type="text" matInput placeholder="Enter Course TA">
-    </mat-form-field><br><br><br>
+        <input type="text" matInput placeholder="Enter Course TA" [(ngModel)] = "TA">
+    </mat-form-field>
+    
+    <mat-form-field style="text-align: left; width: 80%; padding-top: 5%;">
+        <mat-label>Course Year</mat-label>
+        <input type="text" matInput placeholder="Enter Year" [(ngModel)] = "year">
+    </mat-form-field>
+    <br><br><br>
     <button mat-flat-button color="primary" style=" width: 50%;">Enroll Students</button>
 
 
 </div>
 <br><br><br>
-<button mat-flat-button color="primary" style="margin-left: 65%; width: 30%;">Add Course</button>
+<button mat-flat-button color="primary" style="margin-left: 65%; width: 30%;" (click)="addCourse()">Add Course</button>
 
 <br><br><br><br><br>
 <app-header-faculty></app-header-faculty>
