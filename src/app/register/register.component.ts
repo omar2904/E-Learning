@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
   name: string = ""
   department: string = ""
   year: string = ""
-
+  
   constructor(private validateUserService:ValidateUserService, private studentService: StudentService, public router: Router) { }
 
   ngOnInit(): void {
