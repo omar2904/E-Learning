@@ -7,40 +7,15 @@
 
     <p style="font-weight: bold; font-size: 30px; text-align: center;">Announcements</p>
 
-    <mat-grid-list cols="4" rowHeight="2:1">
+    <mat-grid-list cols="4" rowHeight="2:1" *ngFor="let ann of announcements">
 
         <mat-grid-tile>
         </mat-grid-tile>
         <mat-grid-tile colspan="2">
             <mat-card style="text-align: center;  width: 1000px;">
-                <h2>Dr. Nivin</h2>
-                <h3>24/3/2022</h3>
-                <h3>Lecture Presentation will be held on Monday at 2 pm</h3>
-            </mat-card>
-        </mat-grid-tile>
-        <mat-grid-tile>
-        </mat-grid-tile>
-
-
-        <mat-grid-tile>
-        </mat-grid-tile>
-        <mat-grid-tile colspan="2">
-            <mat-card style="text-align: center;  width: 1000px;">
-                <h2>Dr. Nivin</h2>
-                <h3>24/3/2022</h3>
-                <h3>Lecture Presentation will be held on Monday at 2 pm</h3>
-            </mat-card>
-        </mat-grid-tile>
-        <mat-grid-tile>
-        </mat-grid-tile>
-
-        <mat-grid-tile>
-        </mat-grid-tile>
-        <mat-grid-tile colspan="2">
-            <mat-card style="text-align: center;  width: 1000px;">
-                <h2>Dr. Nivin</h2>
-                <h3>24/3/2022</h3>
-                <h3>Lecture Presentation will be held on Monday at 2 pm</h3>
+                <h2>{{ann.announcer}}</h2>
+                <h3>{{ann.date}}</h3>
+                <h3>{{ann.text}}</h3>
             </mat-card>
         </mat-grid-tile>
         <mat-grid-tile>
