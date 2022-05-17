@@ -18,12 +18,14 @@ export class LoginComponent implements OnInit {
   arr = []
 
 
-  constructor(private studentService: StudentService, public router: Router) { }
+  constructor(private studentService: StudentService,public router: Router) { }
 
   ngOnInit(): void {
+   
   }
 
   validateData(): void {
+    
     const studentsObservable = this.studentService.getStudents();
     studentsObservable.subscribe((data: any) => {
       const t = data

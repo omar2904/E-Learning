@@ -7,31 +7,16 @@
 
     <p style="font-weight: bold; font-size: 30px; text-align: center;">Announcements</p>
 
-    <mat-grid-list cols="4" rowHeight="2:1">
+    <mat-grid-list cols="4" rowHeight="2:1" *ngFor="let ann of announcements">
 
         <mat-grid-tile>
         </mat-grid-tile>
         <mat-grid-tile colspan="2">
-            <app-announcement></app-announcement>
-        </mat-grid-tile>
-        <mat-grid-tile>
-        </mat-grid-tile>
-
-
-        <mat-grid-tile>
-            <img src="assets/right-arrow (1).png" />
-        </mat-grid-tile>
-        <mat-grid-tile colspan="2">
-            <app-announcement></app-announcement>
-        </mat-grid-tile>
-        <mat-grid-tile>
-            <img src="assets/right-arrow (2).png" />
-        </mat-grid-tile>
-
-        <mat-grid-tile>
-        </mat-grid-tile>
-        <mat-grid-tile colspan="2">
-            <app-announcement></app-announcement>
+            <mat-card style="text-align: center;  width: 1000px;">
+                <h2>{{ann.announcer}}</h2>
+                <h3>{{ann.date}}</h3>
+                <h3>{{ann.text}}</h3>
+            </mat-card>
         </mat-grid-tile>
         <mat-grid-tile>
         </mat-grid-tile>
