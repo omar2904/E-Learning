@@ -26,7 +26,7 @@ export class CourseService {
   };
 
   getCourse(id: any):Observable<Course>{
-    return this.http.get<Course>(this.baseURL+'/Courses.json/'+ id, this.httpOptions);
+    return this.http.get<Course>(this.baseURL+'/Courses/'+ id + '.json', this.httpOptions);
   };
 
   addCourse(Course: any):Observable<Course>{
@@ -34,8 +34,12 @@ export class CourseService {
     return this.http.post<Course>(this.baseURL + '/Courses.json',
     JSON.stringify(Course), this.httpOptions);
   };
+  
+  updateCourse(id: any, course: any):Observable<Course> {
+    return this.http.put<Course>(this.baseURL + '/Courses/' + id + '.json', JSON.stringify(course), this.httpOptions);
+  }
 
   deleteCourse(id:any){
-    return this.http.delete<Course>(this.baseURL + '/Courses.json/'+id,this.httpOptions)
+    return this.http.delete<Course>(this.baseURL + '/Courses/'+ id + '.json',this.httpOptions)
   };
 }

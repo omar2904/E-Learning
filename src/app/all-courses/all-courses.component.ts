@@ -11,16 +11,12 @@ import { CourseService } from '../Services/Course/course.service';
 })
 
 export class AllCoursesComponent implements OnInit {
-  courses = GlobalVariable.courses
+  courses: any
   email = GlobalVariable.email
 
   constructor(private courseService: CourseService, public router: Router) {
-    if (!this.courses)
-      this.RetieveAllCourses()
-    console.log(this.email)
+    this.RetieveAllCourses()
   }
-
-
 
   ngOnInit(): void {
   }
@@ -29,12 +25,14 @@ export class AllCoursesComponent implements OnInit {
     const coursesObservable = this.courseService.getCourses();
     coursesObservable.subscribe((data: any) => {
       const t = data
-      this.courses = Object.values(t)
-      GlobalVariable.courses = this.courses
+      GlobalVariable.courses = Object.values(t)
+      GlobalVariable.courses.key = Object.keys(t)
+      this.courses = GlobalVariable.courses
     })
   }
   SelectButton(i: number) {
     GlobalVariable.course = this.courses[i]
+    GlobalVariable.course.key = GlobalVariable.courses.key[i]
     if (GlobalVariable.email == 'faculty')
       this.router.navigate(['Admin'])
     else

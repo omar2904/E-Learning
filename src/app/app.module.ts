@@ -36,7 +36,7 @@ import { FormsModule } from '@angular/forms';
 import { UsersComponent } from './users/users.component';
 import { HeaderFacultyComponent } from './header-faculty/header-faculty.component';
 import { NewCourseComponent } from './new-course/new-course.component';
-import { HttpClient,HttpHandler,HttpRequest,HttpEvent,HttpEventType } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 
 
