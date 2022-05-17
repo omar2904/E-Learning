@@ -4,7 +4,7 @@
     <mat-card *ngFor="let lab of labs">
         <mat-card-content>
             <img src="assets/pdf.png"  style='vertical-align:middle;padding-bottom: 2%;'>
-            <h2 style='vertical-align:middle; display:inline; padding-left: 5%;'><a href="">{{lab}}</a>  </h2>
+            <h2 style='vertical-align:middle; display:inline; padding-left: 5%;'><a href='{{lab.path}}'>{{lab.name}}</a>  </h2>
         </mat-card-content>
     </mat-card>
 </div>

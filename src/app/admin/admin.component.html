@@ -20,13 +20,13 @@
     <div *ngIf="lec" style="text-align: left;">
         <mat-form-field style="width: 40%; padding-top: 3%;margin-left: 25%;">
             <mat-label>Lecture Title</mat-label>
-            <input type="text" matInput>
+            <input type="text" matInput [(ngModel)]="lectureName">
         </mat-form-field>
         <mat-form-field style="width: 40%; padding-top: 3%; margin-bottom: 3%; margin-left: 25%;">
             <mat-label>Lecture Path</mat-label>
-            <input type="text" matInput>
+            <input type="text" matInput  [(ngModel)]="LecturePath">
         </mat-form-field>
-        <button mat-flat-button color="primary" style="margin-left: 25%; width: 20%;">Upload</button>
+        <button mat-flat-button (click)="UploadLecture()" color="primary" style="margin-left: 25%; width: 20%;">Upload</button>
     </div>
     <br><br><br><br><br><br>
     <hr style="width: 80%;">
@@ -39,22 +39,15 @@
     <div *ngIf="lab" style="text-align: left;">
         <mat-form-field style="width: 40%; padding-top: 3%;margin-left: 25%;">
             <mat-label>Lab Title</mat-label>
-            <input type="text" matInput>
+            <input type="text" matInput [(ngModel)]="labName">
         </mat-form-field>
         <mat-form-field style="width: 40%; padding-top: 3%; margin-bottom: 3%; margin-left: 25%;">
             <mat-label>Lab Path</mat-label>
-            <input type="text" matInput>
+            <input type="text" matInput [(ngModel)]="labPath">
         </mat-form-field>
-        <button mat-flat-button (click)="UpdateCourses"color="primary" style="margin-left: 25%; width: 20%;">Upload</button>
+        <button mat-flat-button (click)="UploadLab" color="primary" style="margin-left: 25%; width: 20%;">Upload</button>
     </div>
-    <div>
-        <br><br>
-        <hr style="width: 80%;">
-        <br><br><br>
-        <p style="text-align: center; font-size: 50px;">Grades</p>
-        <br><br>
-        <button mat-flat-button color="primary" style="margin-left: 35%; width: 30%;">Upload</button>
-    </div>
+    
     <div>
         <br><br>
         <hr style="width: 80%;">

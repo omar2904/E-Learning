@@ -3,7 +3,7 @@
     <p style="font-weight: bold; font-size: 40px; text-align: center;">All Courses</p>
     <br><br><br><br>
 <div *ngFor="let course of courses; let i = index" [attr.data-index]="i">
-  <button mat-button routerLinkActive="active" (click)="SelectButton(i)"> {{course['name']}} </button>  
+  <button style="font-size: 30px; margin-bottom: 5%; margin-left: 20%; padding-top: 1%; padding-bottom: 1%;" mat-flat-button color="primary" routerLinkActive="active" (click)="SelectButton(i)"> {{course['name']}} </button>  
 </div>
 <br><br><br><br><br><br><br>
 </div>

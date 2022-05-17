@@ -19,8 +19,15 @@ export class NewCourseComponent implements OnInit {
   Doctor = ""
   TA = ""
   year= ""
-  lec = ["Lec 1"]
-  labs = ["Lab 1"]
+
+  lec = [{
+    name: 'lecture 1',
+    path: 'https://drive.google.com/file/d/17bB4F-bZlSPAA3wDdf56u9v7D746_OFp/view?usp=sharing'
+  }]
+  labs = [{
+    name: 'lab 1',
+    path: 'ay habal'
+  }]
 
   constructor(private CourseService: CourseService, private studentService:StudentService) { }
 
@@ -36,8 +43,9 @@ export class NewCourseComponent implements OnInit {
   }
 
   addCourse(): void {
-    console.log(this.selected)
-    let s = new Course(this.title, this.Doctor, this.TA, this.year, this.lec, this.labs);
+
+    let s = new Course(this.title, this.Doctor, this.TA, this.year);
+
     const courseObservable = this.CourseService.addCourse(s);
 
     courseObservable.subscribe((data)=>{
