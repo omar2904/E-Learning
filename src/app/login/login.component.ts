@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
       const t = data
       GlobalVariable.students = Object.values(t)
       GlobalVariable.students.key = Object.keys(t)
-      console.log(GlobalVariable.students[0])
+      this.arr = Object.values(t)
       for (let i = 0; i < this.arr.length; i++) {
         if (this.arr[i]['email'] == this.email && this.arr[i]['password'] == this.password) {
           if(this.arr[i]['pending'])
