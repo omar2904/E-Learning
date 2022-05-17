@@ -6,6 +6,7 @@ import { ValidateUserService } from '../validate-user/validate-user.service';
 import { Student } from '../Models/Student';
 import { GlobalVariable } from '../Models/GlobalVariable';
 import { StudentService } from '../Services/student/student.service';
+import { AnnouncementService } from '../Services/Announcement/announcement.service';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +22,7 @@ export class LoginComponent implements OnInit {
   arr = []
 
 
-  constructor(private studentService: StudentService, public router: Router) { }
+  constructor(private studentService: StudentService,private announcementService:AnnouncementService ,public router: Router) { }
 
   ngOnInit(): void {
   }
@@ -54,6 +55,11 @@ export class LoginComponent implements OnInit {
         alert("Successfully Logged In !")
       }
       else if (this.email == 'admin' && this.password == 'admin') {
+        const announcementObservable = this.announcementService.getAnnouncements();
+        announcementObservable.subscribe((data: any)=>{
+          GlobalVariable.announcements = Object.values(data)
+          console.log(GlobalVariable.announcements)
+        })
         this.router.navigate(['Users'])
         alert("Successfully Logged In !")
       }

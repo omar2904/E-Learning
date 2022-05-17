@@ -34,7 +34,6 @@ export class AdminComponent implements OnInit {
     let announce = new Announcement(this.announcement, this.course.dr,today);
     const announcementObservable = this.announcementService.addAnnouncement(announce);
     announcementObservable.subscribe(()=>{
-      GlobalVariable.announcements;
       alert("Added announcement!")
     })
   }
