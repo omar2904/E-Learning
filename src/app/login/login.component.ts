@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { ValidateUserService } from '../validate-user/validate-user.service';
-
-import { Student } from '../Models/Student';
 import { GlobalVariable } from '../Models/GlobalVariable';
 import { StudentService } from '../Services/student/student.service';
 
@@ -21,17 +18,20 @@ export class LoginComponent implements OnInit {
   arr = []
 
 
-  constructor(private studentService: StudentService, public router: Router) { }
+  constructor(private studentService: StudentService,public router: Router) { }
 
   ngOnInit(): void {
+   
   }
 
   validateData(): void {
+    
     const studentsObservable = this.studentService.getStudents();
     studentsObservable.subscribe((data: any) => {
       const t = data
       GlobalVariable.students = Object.values(t)
       GlobalVariable.students.key = Object.keys(t)
+      console.log(GlobalVariable.students[0])
       this.arr = Object.values(t)
       for (let i = 0; i < this.arr.length; i++) {
         if (this.arr[i]['email'] == this.email && this.arr[i]['password'] == this.password) {
@@ -46,7 +46,6 @@ export class LoginComponent implements OnInit {
           alert("Successfully Logged In !")
           return
         }
-
       }
       if (this.email == 'faculty' && this.password == 'faculty') {
         GlobalVariable.email = this.email

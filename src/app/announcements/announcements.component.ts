@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalVariable } from '../Models/GlobalVariable';
+import { AnnouncementService } from '../Services/Announcement/announcement.service';
 
 @Component({
   selector: 'app-announcements',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnnouncementsComponent implements OnInit {
 
-  constructor() { }
+  announcements: any;
+  constructor(private announcementService: AnnouncementService) { }
 
   ngOnInit(): void {
+    const announcementObservable = this.announcementService.getAnnouncements();
+    announcementObservable.subscribe((data: any)=>{
+      GlobalVariable.announcements = []
+      GlobalVariable.announcements = Object.values(data)
+      console.log(GlobalVariable.announcements)
+      this.announcements = GlobalVariable.announcements;
+
+    })
   }
 
 }

@@ -8,7 +8,7 @@ export class GlobalVariable {
     public static students: any;
     public static courses: any;
 
-    public static announcements = [];
+    public static announcements : any;
 
     public static idCourseGenerator: number = 101
 }
