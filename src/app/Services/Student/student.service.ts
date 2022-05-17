@@ -29,7 +29,7 @@ export class StudentService {
 
   addStudent(student: any):Observable<Student>{
     console.log("add student")
-    return this.http.post<Student>(this.baseURL + '/students.json/1',
+    return this.http.post<Student>(this.baseURL + '/students.json',
     JSON.stringify(student), this.httpOptions);
   };
 

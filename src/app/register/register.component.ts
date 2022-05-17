@@ -14,8 +14,8 @@ export class RegisterComponent implements OnInit {
 
   email: string = ""
   password: string = ""
-  fname: string = ""
-  lname: string = ""
+  name: string = ""
+  department: string = ""
   year: string = ""
 
   constructor(private validateUserService:ValidateUserService, private studentService: StudentService, public router: Router) { }
@@ -25,7 +25,7 @@ export class RegisterComponent implements OnInit {
   }
 
   addUser(): void {
-    let s = new Student(this.email, this.password, this.fname, this.lname, this.year);
+    let s = new Student(this.email, this.password, this.name, this.department, this.year);
     const studentsObservable = this.studentService.addStudent(s);
     studentsObservable.subscribe(()=>{
       this.router.navigate(['Login'])

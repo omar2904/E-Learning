@@ -1,19 +1,25 @@
 export class Student{
+
+    private static idGenerator: number = 12545151
+    
     email: String = "";
     password: String = "";
-    fname: String = "";
-    lname: String = "";
+    name: String = "";
     year: String = "";
     pending: boolean = true;
+    department: String = "";
+    id: String = "";
     courses = [{
         id:  "",
         grades: {},
     }]
-    constructor(email: String, password: String,fname: String,lname: String,year: String){
+    constructor(email: String, password: String,name: String,department: String,year: String){
         this.email = email
         this.password = password
-        this.fname = fname
-        this.lname = lname
+        this.name = name
+        this.department = department
         this.year = year
+        this.id = Student.idGenerator.toString()
+        Student.idGenerator++
     }
 }

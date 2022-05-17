@@ -54,6 +54,9 @@ const routes: Routes = [
   { path: 'NewCourse', component: NewCourseComponent },
   {path:'', redirectTo: '/Login', pathMatch: 'full'}
 ]
+
+
+
 @NgModule({
   declarations: [
     AppComponent,

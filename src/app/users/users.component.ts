@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalVariable } from '../Models/GlobalVariable';
 
 @Component({
   selector: 'app-users',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersComponent implements OnInit {
 
-  constructor() { }
+  students = GlobalVariable.students
+  constructor() {
+    console.log(GlobalVariable.students)
+   }
   check = true;
 
   ngOnInit(): void {
