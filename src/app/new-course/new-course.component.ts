@@ -26,7 +26,7 @@ export class NewCourseComponent implements OnInit {
   }]
   labs = [{
     name: 'lab 1',
-    path: 'ay habal'
+    path: 'https://drive.google.com/file/d/17bB4F-bZlSPAA3wDdf56u9v7D746_OFp/view?usp=sharing'
   }]
 
   constructor(private CourseService: CourseService, private studentService:StudentService) { }
@@ -44,7 +44,7 @@ export class NewCourseComponent implements OnInit {
 
   addCourse(): void {
 
-    let s = new Course(this.title, this.Doctor, this.TA, this.year);
+    let s = new Course(this.title, this.Doctor, this.TA, this.year, this.lec, this.labs);
 
     const courseObservable = this.CourseService.addCourse(s);
 
