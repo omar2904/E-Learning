@@ -18,26 +18,41 @@
     <p class="signUp">Login</p>
     <mat-card
         style="background-color: #ffffff;width: 100%; height: 100%; text-align: center; color: black; font-weight: bold; border-radius: 25px;">
+        <form [formGroup]="myform">
         <mat-card-content>
             <mat-form-field style="text-align: left; width: 80%; padding-top: 10%;">
                 <mat-label>Email</mat-label>
-                <input type="email" matInput placeholder="Enter Email" [(ngModel)]="email">
-
+                <input type="email" formControlName="email" matInput placeholder="Enter Email" [(ngModel)]="email"><br>
+                <div
+                *ngIf="
+                  myform.get('email')?.invalid &&
+                  (myform.get('email')?.dirty || myform.get('email')?.touched)
+                "
+              >
+              <span style="color:red"> Please, provide a name.</span>
+            </div>
             </mat-form-field>
 
 
             <mat-form-field style="text-align: left; width: 80%; padding-top: 8%; margin-bottom: 5%;">
                 <mat-label>Password</mat-label>
-                <input type="password" matInput placeholder="Enter Password" [(ngModel)]="password">
-
-            </mat-form-field>
-            <br>
+                <input type="password" matInput formControlName="password" placeholder="Enter Password" [(ngModel)]="password">
+                <div *ngIf="
+        myform.get('password')?.invalid &&
+        (myform.get('password')?.dirty || myform.get('password')?.touched)
+      "
+    >
+    <span style="color:red"> Please, provide a name.</span>
+</div>
+</mat-form-field>
+<br>
 
             <button mat-flat-button color="primary" (click)="validateData()">Login</button>
 
             <button mat-flat-button color="primary" style="margin-left: 10%;" routerLink="/Register"
                 routerLinkActive="active">Register</button>
         </mat-card-content>
+    </form>
     </mat-card>
 
 </div>

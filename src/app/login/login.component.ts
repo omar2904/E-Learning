@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { GlobalVariable } from '../Models/GlobalVariable';
@@ -16,12 +17,20 @@ export class LoginComponent implements OnInit {
   password: string = ""
   result: boolean = false;
   arr = []
+  myform: FormGroup
 
-
-  constructor(private studentService: StudentService,public router: Router) { }
+  constructor(private studentService: StudentService, public router: Router, private formBuilder: FormBuilder) {
+    this.myform =  this.formBuilder.group({
+      email: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(3)]],
+    });
+   }
 
   ngOnInit(): void {
-   
+    this.myform = this.formBuilder.group({
+      email: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(3)]],
+    });
   }
 
   validateData(): void {

@@ -32,12 +32,14 @@ import { LabsComponent } from './labs/labs.component';
 import { HeaderAdminComponent } from './header-admin/header-admin.component';
 import { AdminComponent } from './admin/admin.component';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormsModule } from '@angular/forms';
 import { UsersComponent } from './users/users.component';
 import { HeaderFacultyComponent } from './header-faculty/header-faculty.component';
 import { NewCourseComponent } from './new-course/new-course.component';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 
@@ -99,9 +101,10 @@ const routes: Routes = [
     MatIconModule,
     RouterModule.forRoot(routes),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [HttpClient],
+  providers: [HttpClient, FormBuilder],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
